@@ -1,0 +1,165 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Align items towards the top */
+  align-items: center;    /* Horizontally center */
+  min-height: 100vh;      /* Full viewport height */
+  background: linear-gradient(135deg, #f3e6e8, #ddeeff); /* Gradient background */
+  text-align: center;
+  padding-top: 50px; /* Add some space from the top */
+}
+
+h1 {
+  font-size: 32px;
+  color: #333;
+  margin-bottom: 20px;
+  animation: fadeIn 1s ease-out;
+}
+
+/* Input and Button Styling */
+.input-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+input {
+  flex: 1;
+  padding: 12px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+input:focus {
+  border-color: #007bff;
+}
+
+button {
+  padding: 12px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: scale(0.98); /* Add a slight "press" animation */
+}
+
+/* Task List Styling */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 80%; /* Responsive width */
+  max-width: 500px;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f4f4f4;
+  padding: 12px;
+  border-radius: 8px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  opacity: 0; /* Make tasks invisible initially */
+  animation: fadeInTask 0.5s forwards; /* Animate when added */
+}
+
+.delete {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.delete:hover {
+  background-color: #c82333;
+}
+
+.delete:active {
+  transform: scale(0.95); /* Add a slight "press" animation on delete button */
+}
+
+/* Empty Message Styling */
+.empty-message {
+  color: #666;
+  font-size: 16px;
+  margin-top: 20px;
+  font-style: italic;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .input-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  input {
+    width: 100%;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  ul {
+    width: 90%;
+  }
+  .delete {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    width: 100px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px); /* Start off slightly above */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInTask {
+  0% {
+    opacity: 0;
+    transform: scale(0.9); /* Start smaller */
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1); /* End at normal size */
+  }
+}
